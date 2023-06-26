@@ -9,4 +9,9 @@ class Rak extends Model
 {
     use HasFactory;
     protected $table = 'rak';
+    protected $fillable = ['rak', 'baris', 'category_id', 'slug'];
+    public function category(){
+        return $this->belongsTo(Category::class);
+        
+    }
 }

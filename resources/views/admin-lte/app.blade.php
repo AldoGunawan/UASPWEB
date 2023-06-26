@@ -3,12 +3,12 @@
 <head>
     @include ('admin-lte/header')
     @livewireStyles
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-
-  <!-- Preloader -->
-  @include('admin-lte/preloader')
+  </head>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+      
+      <!-- Preloader -->
+   @include('admin-lte/preloader')
 
   <!-- Navbar -->
   @include('admin-lte/navbar')

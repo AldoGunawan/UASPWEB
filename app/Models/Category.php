@@ -10,4 +10,10 @@ class Category extends Model
     use HasFactory;
 
     protected $table='category';
+    protected $fillable = ['nama', 'slug'];
+
+    public function rak() {
+
+        return $this->hasMany(Category::class);
+    }
 }

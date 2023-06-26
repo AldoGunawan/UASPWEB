@@ -1,8 +1,8 @@
-@extends('admin-lte/app')
-@section('title', 'Category')
-    
-@section('content')
-    <livewire:category>
+    @extends('admin-lte/app')
+    @section('title', 'Category')
         
-    </livewire:category>
-@endsection
+    @section('content')
+        <livewire:category>
+            
+        </livewire:category>
+    @endsection

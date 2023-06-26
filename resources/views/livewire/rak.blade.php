@@ -5,29 +5,13 @@
     @include('/admin-lte/flash')
 
 
-    <div class="card-header">
-        <span wire:click="create" class="btn btn-sm btn-primary">Add</span>
     
-        <!-- Add the PDF button -->
-        <button wire:click="generatePDF" class="btn btn-sm btn-primary">Print PDF</button>
+    {{-- @include('petugas/rak/create') --}}
+ 
+    @include('petugas/rak/edit')
     
-        <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
-                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    @include('petugas/category/create')
-
-    @include('petugas/category/edit')
-
-    @include('petugas/category/delete')
+    {{-- 
+        @include('petugas/category/delete') --}}
 
         <div class="card">
             <div class="card-header">
@@ -51,16 +35,20 @@
                     <thead>
                         <tr>
                             <th width="10%">No</th>
-                            <th>Kategori</th>
+                            <th>Rak</th>
+                            <th>Baris</th>
+                            <th>Category</th>
                             <th width="15%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                    @foreach ($category as $item)
+                    @foreach ($raks as $item)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$item->nama}}</td>
+                            <td>{{$item->rak}}</td>
+                            <td>{{$item->baris}}</td>
+                            <td>{{$item->category->nama}}</td>
                             <td>
                                <div class="btn-group"></div>
                                <span wire:click="edit({{$item->id}})" class="btn btn-sm btn-primary">Edit</span>
@@ -74,7 +62,7 @@
             <!-- cardbody -->
             <div class="card-footer clearfix">
                 
-                {{$category->links()}}
+                {{$raks->links()}}
                     
             </div>
         </div>
